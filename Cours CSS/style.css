@@ -28,7 +28,7 @@ h1 {
 }
 
 main {
-  height: 500px;
+  min-height: 500px;
   width: 90%; /* utiliser les % seulement pr les largeurs */
   background: rgba(255, 255, 255, 0.413);
   margin: 0 auto; /* Centrer une boîte */
@@ -40,4 +40,31 @@ main {
 
 h2 {
   margin: 0;
+}
+
+.flexbox {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* FLEXBOX */
+/* Sert à répartir équitablement des éléments sur la page  */
+.flexbox ul {
+padding: 0;
+display: flex;
+justify-content: space-around;
+}
+
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: turquoise;
+  /* Centrer un unique élément verticalement et horizontalement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
