@@ -4,9 +4,16 @@
   font-family: "DMSerif";
   src: url(./assets/fonts/DMSerifDisplay-Regular.ttf);
 }
+/* 'étoile donne du style à TOUS les éléments' */
+/* *{
+  margin: 0;
+  padding: 0;
+} */
 
 body{
   font-family: "DMSerif", Verdana;
+  background:url(./assets/img/bg.jpeg) center/cover;
+  min-height: 100vh; /* VH (viewport height) = 100% de la taille de l'écran */
 }
 
 h1 {
@@ -18,4 +25,19 @@ h1 {
   color: rgba(0, 0, 139, 0.674);
   text-decoration:underline;
   font-family: 'Oswald', sans-serif;
+}
+
+main {
+  height: 500px;
+  width: 90%; /* utiliser les % seulement pr les largeurs */
+  background: rgba(255, 255, 255, 0.413);
+  margin: 0 auto; /* Centrer une boîte */
+  border: 2px solid rgb(81, 183, 217);
+  border-radius: 20px 0 20px 0;
+  box-shadow: 0 0 17px 4px #31cdcaf2;
+  padding: 15px;
+}
+
+h2 {
+  margin: 0;
 }
