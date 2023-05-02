@@ -1,0 +1,177 @@
+:root {
+  --color1: rgb(254, 254, 254);
+  --color2: pink;
+  --color3: turquoise;
+  --color4: salmon;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./assets/img/bg-2.jpg) center/cover;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.507);
+  width: calc(100% - 50px);
+  padding: 20px 20px 6px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.508);
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+.card::before {
+  content: "\2730";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 2.4rem;
+}
+h1 {
+  margin-bottom: 24px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.polygon-container{
+  /* permet de mettre une ombre au polygon. Cela ne peut se faire que via le parent */
+  filter: drop-shadow(-1px 6px 3px var(--color1));
+
+/*   permet de centrer le polygon à condition que le parent (grid-container) soit en grid */
+  place-self: center left;
+}
+
+.polygon {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  /* background: linear-gradient(135deg, var(--color4) 0%, var(--color3) 100%); */
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  height: 100px;
+  width: 100px;
+}
+
+/* permet de rajouter un élément */
+.polygon:after {
+  content: "un texte";
+  position: absolute;
+  color: var(--color2);
+  background: var(--color4);
+
+  /* permet de centrer l'élément */ 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  width: 90px;
+  padding: 4px;
+  text-align: center;
+}
+
+p {
+  line-height: 26px;
+  margin: 20px 0;
+
+/* permet de limiter le nombre de lignes visibles */
+  display: -webkit-box;
+  -webkit-box-orient:vertical ;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+
+  text-align: justify;
+}
+
+/* permet de changer la couleur de l'encadré de sélection du texte ainsi que la couleur du texte */
+p::selection {
+  background: var(--color2);
+  color: var(--color4);
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+
+/* permet de cacher le bouton checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* permet de changer le style d'un élément lorsqu'il est coché */
+input[type="checkbox"]:checked + label {
+  background: var(--color3);
+  color: black;
+  transform: scale(1.10);
+  transition: 0.2s ;
+  filter: brightness(120%);
+}
+label {
+  cursor: pointer;
+  border: 1px solid var(--color1);
+  background: var(--color4);
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+
+  /* permet d'éviter que l'utilisateur ne puisse saisir du texte */
+  user-select: none;
+}
+
+.e-mail {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.e-mail input {
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  outline: none;
+  border: 3px solid transparent;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color4);
+
+ /*  permet de définir les tailles min et max du bouton sans faire de responsive */
+  min-width: 180px;
+  width: 35%;
+  max-width: 300px;
+}
+
+/* permet de donner du style qd l'input est sélectionné */
+input[type="text"]:focus {
+  background: transparent;
+  border: 3px solid var(--color2);
+  border-radius: 150px;
+}
+
+input[type="text"]::placeholder {
+  color: var(--color3);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+button {
+  cursor: pointer;
+  background: var(--color2);
+  font-family: 1.3rem;
+  padding: 10px 20px;
+  border-radius: 150px;
+  margin: 0 auto;
+  display: block;
+
+  /* toujours mettre l'animation dans le bouton principal pour l'avoir en entrée et en sortie */
+  transition: 0.2s;
+}
+
+button:hover {
+  letter-spacing: 3px;
+}
+
